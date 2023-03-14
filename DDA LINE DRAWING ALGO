@@ -1,0 +1,97 @@
+#include<windows.h>;
+#include<GL/glut.h>;
+#include<bits/stdc++.h>;
+
+
+using namespace std;
+double x1,x2,y11,y2;
+
+void display(void)
+{
+    double dy,dx,step,x,y,k,xin,yin;
+    dx=x2-x1;
+    dy=y2-y11;
+    x=x1;
+    y=y11;
+    if(abs(dx)&gt; abs(dy))
+    {
+        step = abs(dx);
+    }
+    else
+        step = abs(dy);
+
+    xin = dx/step;
+    yin = dy/step;
+
+    glBegin(GL_POINTS);
+    glVertex2i(x,y);
+    glEnd();
+    cout&lt;
+    &lt;
+    &quot;
+    The pixels are&quot;;
+
+    for(k=0; k&lt; step; k++)
+    {
+        x=x+xin;
+        y=y+yin;
+
+        x=round(x);
+        y=round(y);
+        cout&lt;
+        &lt;
+        x&lt;
+        &lt;
+        &quot;
+        &quot;
+        &lt;
+        &lt;
+        y&lt;
+        &lt;
+        endl;
+
+        glBegin(GL_POINTS);
+        glVertex2i(x,y);
+        glEnd();
+    }
+    glFlush();
+}
+void init(void)
+{
+    glClearColor(0.7,0.7,0.7,0.7);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D( -100,100,-100,100);
+}
+int main(int argc,char** argv)
+{
+    cout&lt;
+    &lt;
+    &quot;
+    Enter the value of (x1,y1) : &quot;;
+        cin&gt;
+        &gt;
+        x1&gt;
+        &gt;
+        y11;
+        cout&lt;
+        &lt;
+        &quot;
+        Enter the value of (x2,y2):&quot;;
+        cin&gt;
+        &gt;
+        x2&gt;
+        &gt;
+        y2;
+
+        glutInit(&amp; argc,argv);
+        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+        glutInitWindowSize(500,500);
+        glutInitWindowPosition(100,100);
+        glutCreateWindow("DDA LINE ALGO");
+        init();
+        glutDisplayFunc(display);
+        glutMainLoop();
+
+        return 0;
+    }
