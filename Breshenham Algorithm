@@ -1,0 +1,126 @@
+#include<windows.h>;
+#include<GL/glut.h>;
+#include<bits/stdc++.h>;
+using namespace std;
+double x1,y3,x2,y2,X,Y;
+void plot()
+{
+
+    double dx,dy,m,pk;
+    int step;
+    dx=x2-x1;
+    dy=y2-y3;
+    m=dy/dx;
+    if (abs(dx)&gt; abs(dy))
+        step=abs(dx);
+    else
+        step=abs(dy);
+    X=x1;
+    Y=y3;
+    if(m&lt; 1)
+    {
+        pk=2*dy-dx;
+        glColor3f(1.0,0.0,0.0);
+        glBegin(GL_POINTS);
+        glPointSize(1.0);
+        glVertex2i(X,Y);
+        cout &lt;
+        &lt;
+        &quot;
+pk:
+        &quot;
+        &lt;
+        &lt;
+        pk &lt;
+        &lt;
+        endl;
+        for(int i=0; i&lt; step; i++)
+        {
+
+            if(pk&lt; 0)
+            {
+                Y=Y;
+                pk=pk+2*dy;
+            }
+            else
+            {
+                Y=Y+1;
+                pk=pk+2*dy-2*dx;
+            }
+            X++;
+            cout &lt;
+            &lt;
+            i &lt;
+            &lt;
+            &quot;
+            &quot;
+            &lt;
+            &lt;
+            X &lt;
+            &lt;
+            &quot;
+            &quot;
+            &lt;
+            &lt;
+            Y &lt;
+            &lt;
+            endl;
+            cout &lt;
+            &lt;
+            &quot;
+pk:
+            &quot;
+            &lt;
+            &lt;
+            pk &lt;
+            &lt;
+            endl;
+            glBegin(GL_POINTS);
+            glPointSize(1.0);
+            glVertex2i(X,Y);
+            glEnd();
+        }
+    }
+    glFlush();
+}
+void init (void)
+{
+
+    glEnable(GL_POINT_SMOOTH);
+    glClearColor(0.0,0.0,0.0,1.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-100,100,-100,100);
+}
+
+int main(int argc,char**argv)
+{
+    cout&lt;
+    &lt;
+    &quot;
+    Enter (x1,y1):&quot;;
+        cin&gt;
+        &gt;
+        x1&gt;
+        &gt;
+        y3;
+        cout&lt;
+        &lt;
+        &quot;
+        Enter (x2,y2):&quot;;
+        cin&gt;
+        &gt;
+        x2&gt;
+        &gt;
+        y2;
+        glutInit(&amp; argc,argv);
+        glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+        glutInitWindowSize(500,500);
+        glutInitWindowPosition(100,100);
+        glutCreateWindow("Breshenham Line Alogorithm");
+        init();
+        glutDisplayFunc(plot);
+        glutMainLoop();
+
+    }
