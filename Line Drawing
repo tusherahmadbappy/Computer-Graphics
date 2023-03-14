@@ -1,0 +1,29 @@
+#include<windows.h>;
+#include<GL/glut.h>;
+void plot()
+{
+    glColor3f(0.0,1.0,1.0);
+    glBegin(GL_POINTS);
+    glVertex2i(20,20);
+    glEnd();
+    glFlush();
+}
+
+void init(void)
+{
+    glClearColor(1.0,0.0,0.0,0.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-100,100,-100,100);
+}
+int main()
+{
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+    glutInitWindowSize(500,500);
+    glutInitWindowPosition(100,100);
+    glutCreateWindow("line Draw");
+    init();
+    glutDisplayFunc(plot);
+    glutMainLoop();
+}
