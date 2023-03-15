@@ -9,7 +9,7 @@ void plot(void)
     glColor3f(1.0,0.0,0.0);
     glPointSize(3);
     glBegin(GL_POINTS);
-    for(int i=0; i&lt; 360; i++)
+    for(int i=0; i<360; i++)
     {
 
         theta=(3.14*i)/180;
@@ -19,7 +19,7 @@ void plot(void)
 
     glPointSize(3);
     glBegin(GL_POINTS);
-    for(int i=0; i&lt; 360; i++)
+    for(int i=0; i<360; i++)
     {
 
         theta=(3.14*i)/180;
@@ -29,7 +29,7 @@ void plot(void)
     glEnd();
     glPointSize(3);
     glBegin(GL_POINTS);
-    for(int i=0; i&lt; 360; i++)
+    for(int i=0; i<360; i++)
     {
 
         theta=(3.14*i)/180;
