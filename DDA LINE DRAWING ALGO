@@ -1,7 +1,7 @@
-#include<windows.h>;
-#include<GL/glut.h>;
-#include<bits/stdc++.h>;
-
+2. DDA line algo
+#include<windows.h>
+#include<bits/stdc++.h>
+#include<GL/glut.h>
 
 using namespace std;
 double x1,x2,y11,y2;
@@ -13,7 +13,7 @@ void display(void)
     dy=y2-y11;
     x=x1;
     y=y11;
-    if(abs(dx)&gt; abs(dy))
+    if(abs(dx)>abs(dy))
     {
         step = abs(dx);
     }
@@ -26,29 +26,15 @@ void display(void)
     glBegin(GL_POINTS);
     glVertex2i(x,y);
     glEnd();
-    cout&lt;
-    &lt;
-    &quot;
-    The pixels are&quot;;
-
-    for(k=0; k&lt; step; k++)
+    cout<<"The pixels are";
+    for(k=0; k<step; k++)
     {
         x=x+xin;
         y=y+yin;
 
         x=round(x);
         y=round(y);
-        cout&lt;
-        &lt;
-        x&lt;
-        &lt;
-        &quot;
-        &quot;
-        &lt;
-        &lt;
-        y&lt;
-        &lt;
-        endl;
+        cout<<x<<"  "<<y<<endl;
 
         glBegin(GL_POINTS);
         glVertex2i(x,y);
@@ -65,33 +51,19 @@ void init(void)
 }
 int main(int argc,char** argv)
 {
-    cout&lt;
-    &lt;
-    &quot;
-    Enter the value of (x1,y1) : &quot;;
-        cin&gt;
-        &gt;
-        x1&gt;
-        &gt;
-        y11;
-        cout&lt;
-        &lt;
-        &quot;
-        Enter the value of (x2,y2):&quot;;
-        cin&gt;
-        &gt;
-        x2&gt;
-        &gt;
-        y2;
+    cout<<"Enter the value of (x1,y1) : ";
+    cin>>x1>>y11;
+    cout<<"Enter the value of (x2,y2):";
+    cin>>x2>>y2;
 
-        glutInit(&amp; argc,argv);
-        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-        glutInitWindowSize(500,500);
-        glutInitWindowPosition(100,100);
-        glutCreateWindow("DDA LINE ALGO");
-        init();
-        glutDisplayFunc(display);
-        glutMainLoop();
+    glutInit(&argc,argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(500,500);
+    glutInitWindowPosition(100,100);
+    glutCreateWindow("DDA LINE ALGO");
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
 
-        return 0;
-    }
+    return 0;
+}
